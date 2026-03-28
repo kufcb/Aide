@@ -3,6 +3,7 @@ from langchain_core.tools import tool
 
 @tool
 def duckduckgo_search(query: str) -> str:
+    """Search DuckDuckGo for the given query and return the top 5 results."""
     try:
         # 获取前5条搜索结果
         summary = DDGS().text(query, max_results=5)

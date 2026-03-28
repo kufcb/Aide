@@ -1,12 +1,9 @@
+from agent.react_agent import agent_main_stream
 from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.cors import CORSMiddleware
-from agent.langchain_react_agent import agent_main as langchain_react_agent_main
-from agent.langchain_react_agent import agent_main_stream
-from agent.langgraph_react_agent import agent_main as langgraph_react_agent_main_sync
-from agent.langgraph_react_agent import agent_main_stream as langgraph_agent_main_stream
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -26,16 +23,16 @@ class ChatInfo(BaseModel):
     msg: str
 
 
-@app.post("/chat")
-async def chat(info: ChatInfo):
-    return {"result": langchain_react_agent_main(info.msg)}
+# @app.post("/chat")
+# async def chat(info: ChatInfo):
+#     return {"result": langchain_react_agent_main(info.msg)}
 
 
 @app.post("/chat/stream")
 async def chat_stream(info: ChatInfo):
     """流式传输接口，返回 SSE 格式的数据流"""
     return StreamingResponse(
-        langgraph_agent_main_stream(info.msg),
+        agent_main_stream(info.msg),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",

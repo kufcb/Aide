@@ -1,31 +1,21 @@
 
-from chat.zhipu_chat import chat as llm
-from langchain_core.tools import tool
-from langgraph.graph import StateGraph, START, END
-from langchain_core.messages import BaseMessage, SystemMessage, ToolMessage
-from typing import TypedDict, Sequence, Annotated
-from langgraph.graph.message import add_messages
 import json
-from ddgs import DDGS
-from logs.logging_server import get_logger, logger
+from typing import TypedDict, Sequence, Annotated
 
+from langchain_core.messages import BaseMessage, SystemMessage, ToolMessage
+from langgraph.graph import StateGraph, END
+from langgraph.graph.message import add_messages
+
+from chat.zhipu_chat import chat as llm
+from logs.logging_server import logger
+from tools.can_tools import write_to_file, duckduckgo_search, read_file, run_terminal_command
 
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
 
 
-@tool
-def duckduckgo_search(query: str) -> str:
-    """Search DuckDuckGo for the given query and return the results."""
-    try:
-        # 获取前5条搜索结果
-        summary = DDGS().text(query, max_results=5)
-        return summary
-    except Exception as e:
-        return f"搜索出错: {e}"
-
-tools = [duckduckgo_search]
+tools = [write_to_file,duckduckgo_search,read_file,run_terminal_command]
 
 tools_by_name = {tool.name: tool for tool in tools}
 
@@ -34,7 +24,7 @@ model = llm.bind_tools(tools)
 
 def call_model(state: AgentState):
     system_prompt = SystemMessage(
-        content="你是一个有用的 AI 助手。如果需要，你可以使用 duckduckgo_search 工具来获取信息来构建你的答案。"
+        content="你是一个有用的 AI 助手。如果需要，你可以使用工具来获取信息来构建你的答案。"
     )
     response = model.invoke([system_prompt] + list(state["messages"]))
     return {"messages": [response]}

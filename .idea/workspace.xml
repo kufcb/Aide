@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a164649-ea29-42d1-a72d-e53b39bcbe05" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Aide.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agent/langgraph_react_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agent/prompt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/ollama_chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/zhipu_chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/logging_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/can_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/file_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/terminal_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/web_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/index.html" afterDir="false" />
+    <list default="true" id="8a164649-ea29-42d1-a72d-e53b39bcbe05" name="更改" comment="初始化">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent/langchain_react_agent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent/langgraph_react_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent/langgraph_react_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/can_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/can_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/file_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/file_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/terminal_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/terminal_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/web_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/web_tool.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="24" />
+    <option name="cachedIndexableFilesCount" value="25" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -127,14 +116,27 @@
       <workItem from="1774619786518" duration="757000" />
       <workItem from="1774620577710" duration="111000" />
       <workItem from="1774620700952" duration="9245000" />
-      <workItem from="1774681672044" duration="8372000" />
+      <workItem from="1774681672044" duration="11225000" />
     </task>
+    <task id="LOCAL-00001" summary="初始化">
+      <option name="closed" value="true" />
+      <created>1774693162787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774693162787</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Aide$Aide.coverage" NAME="Aide 覆盖结果" MODIFIED="1774692875680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Aide$Aide.coverage" NAME="Aide 覆盖结果" MODIFIED="1774694551974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
