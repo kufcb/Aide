@@ -1,5 +1,6 @@
 import logging
 import os
+from logging.handlers import TimedRotatingFileHandler
 
 # 创建日志目录
 LOG_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -12,14 +13,22 @@ logger.setLevel(logging.INFO)
 # 防止重复添加 handler
 if not logger.handlers:
     formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     )
 
     ch = logging.StreamHandler()
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
-    fh = logging.FileHandler(LOG_FILE, encoding='utf-8')
+    # 按天滚动日志，保留30天的日志文件
+    fh = TimedRotatingFileHandler(
+        LOG_FILE,
+        when="midnight",  # 每天午夜滚动
+        interval=1,  # 每天一次
+        backupCount=30,  # 保留30天的日志
+        encoding="utf-8",
+    )
+    fh.suffix = "%Y-%m-%d"  # 日志文件后缀格式
     fh.setFormatter(formatter)
     logger.addHandler(fh)
 
