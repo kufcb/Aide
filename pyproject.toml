@@ -1,0 +1,15 @@
+[project]
+name = "aide"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.9"
+dependencies = [
+    "ddgs>=9.8.0",
+    "fastapi>=0.128.8",
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.31",
+    "langchain-core>=0.3.83",
+    "langchain-ollama>=0.3.10",
+    "langgraph>=0.6.11",
+    "uvicorn>=0.39.0",
+]
