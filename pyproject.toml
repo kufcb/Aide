@@ -11,5 +11,9 @@ dependencies = [
     "langchain-core>=0.3.83",
     "langchain-ollama>=0.3.10",
     "langgraph>=0.6.11",
+    "pgvector>=0.4.1",
+    "psycopg[binary]>=3.2.10",
+    "pyjwt>=2.12.1",
+    "python-dotenv>=1.1.1",
     "uvicorn>=0.39.0",
 ]

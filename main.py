@@ -21,18 +21,22 @@ app.mount("/ui", StaticFiles(directory="ui", html=True), name="ui")
 
 class ChatInfo(BaseModel):
     msg: str
+    user_id: str = "default_user"
+    session_id: str = "default_session"
+    agent_id: str = "aide-react-agent"
 
-
-# @app.post("/chat")
-# async def chat(info: ChatInfo):
-#     return {"result": langchain_react_agent_main(info.msg)}
 
 
 @app.post("/chat/stream")
 async def chat_stream(info: ChatInfo):
     """流式传输接口，返回 SSE 格式的数据流"""
     return StreamingResponse(
-        agent_main_stream(info.msg),
+        agent_main_stream(
+            info.msg,
+            user_id=info.user_id,
+            session_id=info.session_id,
+            agent_id=info.agent_id,
+        ),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
@@ -40,5 +44,4 @@ async def chat_stream(info: ChatInfo):
             "X-Accel-Buffering": "no",
         }
     )
-
 
